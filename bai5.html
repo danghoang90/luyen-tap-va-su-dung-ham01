@@ -8,15 +8,18 @@
 <script>
   let stars = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair"," Dubhe", "Regulus"];
   let constellations =["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+  let flag = false;
   function checksao(){
-    for (let i = 0; i< stars.length; i++){
-      if (str === stars[i]){
-          return constellations[i];
-      } else {
-          return "không tìm thấy kết quả";
-      }
+    for (let i = 0; i< stars.length; i++) {
+        if (str === stars[i]) {
+            return constellations[i];
+        }
+        if (i == stars.length - 1) {
+            flag = true
+        } if (flag == true){
+        return "không tìm thấy kết quả";
+        }
     }
-
   }
   let str = prompt("Nhập tên ngôi sao: ");
   alert(checksao(str));
